@@ -1,0 +1,35 @@
+#include<stdio.h>
+main()
+{
+	int N,M,Cont,X,R;
+	scanf("%d",&N);
+	scanf("%d",&M);
+	Cont=1;
+	X=1;
+	R=-1;
+	while(Cont<M)
+	{
+		while(X<=N)
+		{
+			if(X%4==0)
+			{
+			 printf("%d",X);
+			 R=R+1;
+			}
+			X=X+1;
+			if(R==2)
+			{
+				printf("\n");
+				R=0;
+			}
+			if(R==1)
+			{
+				printf("\t");
+			}
+		}
+		X=1;
+		Cont=Cont+1;
+	}
+	
+	system("pause");
+}

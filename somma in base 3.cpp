@@ -1,0 +1,77 @@
+#include<iostream>
+using namespace std;	
+int main ()
+
+{
+    int N,M,ParzN,ParzM,c,tot,Riporto;
+ 	cout<<"Inserire due numeri in base 3 da sommare"<<endl;
+	cin>>N;
+	cin>>M;
+	if(N<M)
+	{
+		c=N;
+		N=M;
+		M=c;
+	}
+	Riporto=0;
+	ParzM=2;
+	while(ParzM>0)
+	{
+		ParzN=N%10;
+		ParzM=M%10;
+		if(ParzN+ParzM+Riporto<=2)
+		{
+			tot=ParzN+ParzM+Riporto;
+			Riporto=0;
+			cout<<"\n"<<tot<<endl;
+		}
+		else
+		{ 
+		  tot=ParzN+ParzM+Riporto;
+			if(tot==3)
+			{
+				cout<<"\n"<<0<<endl;
+				Riporto=1;
+			}
+			else
+			{
+				cout<<"\n"<<1<<endl;
+				Riporto=1;
+			}
+	}
+	N=N/10;
+	M=M/10;
+	}
+	ParzN=N%10;
+    while(ParzN!=0)
+    {
+    	if(ParzN+Riporto<=2)
+		{
+			tot=ParzN+Riporto;
+			Riporto=0;
+			cout<<"\n"<<tot<<endl;
+		}
+		else
+		{ 
+		  tot=ParzN+Riporto;
+			if(tot==3)
+			{
+				cout<<"\n"<<0<<endl;
+				Riporto=1;
+			}
+			else
+			{
+				cout<<"\n"<<1<<endl;
+				Riporto=1;
+			}
+	}
+		N=N/10;
+		ParzN=N%10;
+	}
+    if(Riporto!=0)
+    {
+    	cout<<"\n"<<Riporto<<endl;
+	}
+	system("pause");
+}
+
